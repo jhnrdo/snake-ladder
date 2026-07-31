@@ -1,0 +1,141 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.landing-box {
+    width: 90%;
+    max-width: 1300px;
+    height: 650px;
+
+    margin: 20px auto;
+
+    background-color: rgb(213, 226, 210);
+
+    border: 2px solid black;
+    border-radius: 15px;
+
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, .25);
+
+    position: relative;
+}
+
+.subj-name {
+    text-align: left;
+    margin-left: 40px;
+
+    font-family: Arial;
+    font-size: 30px;
+}
+
+.name1 {
+    text-align: right;
+    margin-right: 450px;
+    margin-top: -45px;
+}
+.name2 {
+    text-align: right;
+    margin-right: 300px;
+    margin-top: -34.5px;
+}
+.name3 {
+    text-align: right;
+    margin-right: 165px;
+    margin-top: -34.5px;
+}
+.name4 {
+    text-align: right;
+    margin-right: 115px;
+    margin-top: -34.5px;
+}
+
+.image {
+    position: absolute;
+
+    height: 380px;
+    width: 50%;
+    border: none;
+    border-radius: 150px;
+    border-right: none;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+    left: 10;
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    overflow: hidden;
+
+}
+
+/* BUTTONS */
+
+.buttons {
+    position: absolute;
+
+    top: 50%;
+    left: 20%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mechanics-button,
+.answer-key-button {
+    display: block;
+
+    background-color: rgb(253, 122, 144);
+
+    padding: 8px 19px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
+    color: black;
+
+    text-align: center;
+
+    transition: background-color .5s;
+}
+
+.mechanics-button:hover,
+.answer-key-button:hover {
+    background-color: pink;
+}
+
+@media (max-width: 600px) {
+
+    .landing-box {
+        width: 90%;
+        height: 80vh;
+    }
+
+    .subj-name {
+        font-size: 24px;
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    .buttons {
+        left: 25%;
+    }
+
+    .mechanics-button,
+    .answer-key-button {
+        width: 120px;
+    }
+}
