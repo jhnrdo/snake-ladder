@@ -1,0 +1,419 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+    font-style: oblique;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#0f2338;
+    color:white;
+    padding:8px 50px;
+}
+
+.subject{
+    flex:1;
+    font-size: 19px;
+}
+
+.logos{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px; /* space on both sides */
+}
+
+.logos img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.divider{
+    width: 2px;
+    height: 90px;
+    background: white;
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+.students{
+    text-align:center;
+}
+
+.subject-info{
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between PRDO141 and professor */
+    margin-top: 6px;
+}
+
+.subject-info p{
+    margin: 0;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    color: #d8d8d8;
+}
+
+.prof-name{
+    color: #d8d8d8;
+}
+
+.students p{
+    margin:6px 0;
+    font-size:1rem;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.bg-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image img{
+    width: 100%;
+    height: auto;      /* Keeps the image's aspect ratio */
+    display: block;
+}
+
+.buttons {
+
+    position: absolute;
+    top: 133%;                 /* Move buttons down */
+    left: 50%;                /* Center horizontally */
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    gap: 110px;
+}
+
+.mechanics-button {
+    
+    display: block;
+    
+    
+    background-color: #0f2338;
+    
+    padding: 8px 19px;
+    
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    
+    font-weight: bold;
+    font-size: 40px;
+    
+    cursor: pointer;
+    
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+    text-align: center;
+    
+    box-shadow: 10px 10px 10px rgba(77, 131, 49, 0.8);
+    
+    transition: opacity .5s;
+}
+
+.mechanics-button,
+.mechanics-button *,
+.mechanics-button :after,
+.mechanics-button :before,
+.mechanics-button:after,
+.mechanics-button:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.mechanics-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #0f2338;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #ffffff);
+  padding: 0;
+  text-transform: uppercase;
+}
+.mechanics-button:disabled {
+  cursor: default;
+}
+.mechanics-button:-moz-focusring {
+  outline: auto;
+}
+.mechanics-button svg {
+  display: block;
+  vertical-align: middle;
+}
+.mechanics-button [hidden] {
+  display: none;
+}
+.mechanics-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  position: relative;
+
+  padding: 8px 24px; /* Makes the button thinner */
+  font-size: 32px;   /* Adjust text size */
+  font-weight: 900;
+  line-height: 1;
+
+  text-align: center;
+}
+.mechanics-button span {
+  mix-blend-mode: difference;
+}
+.mechanics-button:after,
+.mechanics-button:before {
+  --tilt: 1.2rem;
+  background: #146930;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 100%,
+    0 100%
+  );
+  clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  transform: translateX(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: calc(100% + var(--tilt));
+}
+.mechanics-button:after {
+  left: 100%;
+  transform: translateX(var(--progress, 0)) rotate(180deg);
+  z-index: -1;
+}
+.mechanics-button:hover:before {
+  --progress: 100%;
+}
+.mechanics-button:hover:after {
+  --progress: -100%;
+}
+
+.answer-key-button {
+    display: block;
+    
+    background-color: rgb(77, 131, 49);
+    
+    padding: 8px 19px;
+    
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    
+    font-weight: bold;
+    font-size: 40px;
+    
+    cursor: pointer;
+    
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+    text-align: center;
+    
+    box-shadow: 10px 10px 10px rgba(77, 131, 49, 0.8);
+    
+    transition: opacity .5s;
+}
+
+.answer-key-button,
+.answer-key-button *,
+.answer-key-button :after,
+.answer-key-button :before,
+.answer-key-button:after,
+.answer-key-button:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.answer-key-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #0f2338;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #ffffff);
+  padding: 0;
+  text-transform: uppercase;
+}
+.answer-key-button:disabled {
+  cursor: default;
+}
+.answer-key-button:-moz-focusring {
+  outline: auto;
+}
+.answer-key-button svg {
+  display: block;
+  vertical-align: middle;
+}
+.answer-key-button [hidden] {
+  display: none;
+}
+.answer-key-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  position: relative;
+
+  padding: 8px 24px; /* Makes the button thinner */
+  font-size: 32px;   /* Adjust text size */
+  font-weight: 900;
+  line-height: 1;
+
+  text-align: center;
+}
+.answer-key-button span {
+  mix-blend-mode: difference;
+}
+.answer-key-button:after,
+.answer-key-button:before {
+  --tilt: 1.2rem;
+  background: #146930;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 100%,
+    0 100%
+  );
+  clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  transform: translateX(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: calc(100% + var(--tilt));
+}
+.answer-key-button:after {
+  left: 100%;
+  transform: translateX(var(--progress, 0)) rotate(180deg);
+  z-index: -1;
+}
+.answer-key-button:hover:before {
+  --progress: 100%;
+}
+.answer-key-button:hover:after {
+  --progress: -100%;
+}
+
+
+
+/* Mobile */
+@media(max-width:768px){
+
+    .header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .subject{
+        flex: unset;
+        width: 100%;
+    }
+
+    .subject h1{
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .subject-info{
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .logos{
+        margin: 0;
+        justify-content: center;
+    }
+
+    .logos img{
+        width: 70px;
+        height: 70px;
+    }
+
+    .divider{
+        width: 80%;
+        height: 2px;
+        margin: 10px 0;
+    }
+
+    .students{
+        text-align: center;
+    }
+
+    .students p{
+        font-size: 0.95rem;
+    }
+
+    .bg-image{
+        position: relative;
+    }
+
+    .bg-image img{
+        width: 100%;
+        height: auto;
+    }
+
+    .buttons{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        align-items: center;
+    }
+
+    .mechanics-button,
+    .answer-key-button{
+        width: 220px;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+
+}
