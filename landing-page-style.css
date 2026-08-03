@@ -1,0 +1,296 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+    font-style: oblique;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#0f2338;
+    color:white;
+    padding:8px 50px;
+}
+
+.subject{
+    flex:1;
+    font-size: 19px;
+}
+
+.logos{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px; /* space on both sides */
+}
+
+.logos img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.divider{
+    width: 2px;
+    height: 90px;
+    background: white;
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+.students{
+    text-align:center;
+}
+
+.subject-info{
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between PRDO141 and professor */
+    margin-top: 6px;
+}
+
+.subject-info p{
+    margin: 0;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    color: #d8d8d8;
+}
+
+.prof-name{
+    color: #d8d8d8;
+}
+
+.students p{
+    margin:6px 0;
+    font-size:1rem;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.bg-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image img{
+    width: 100%;
+    height: auto;      /* Keeps the image's aspect ratio */
+    display: block;
+}
+
+.buttons{
+    position: absolute;
+    top: 133%;               /* Keep your original position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(20px, 5vw, 110px);
+}
+
+
+/* ===========================
+   BOTH BUTTONS
+=========================== */
+
+.mechanics-button,
+.answer-key-button{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background:#0f2338;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+
+    border:2px solid #fff;
+    border-radius:999px;
+
+    width: clamp(180px, 18vw, 280px);
+    height: clamp(52px, 5vw, 70px);
+
+    padding:0 18px;
+
+    font-family:Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight:900;
+    line-height:1;
+
+    cursor:pointer;
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.mechanics-button span,
+.answer-key-button span{
+    mix-blend-mode:difference;
+}
+
+
+/* ===========================
+   BUTTON ANIMATION
+=========================== */
+
+.mechanics-button:before,
+.mechanics-button:after,
+.answer-key-button:before,
+.answer-key-button:after{
+
+    --tilt:1.2rem;
+
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:calc(-100% - var(--tilt));
+
+    width:calc(100% + var(--tilt));
+    height:100%;
+
+    background:#146930;
+
+    clip-path:polygon(
+        0 0,
+        calc(100% - var(--tilt)) 0,
+        100% 100%,
+        0 100%
+    );
+
+    transform:translateX(var(--progress,0));
+    transition:transform .2s ease;
+}
+
+.mechanics-button:after,
+.answer-key-button:after{
+
+    left:100%;
+    transform:translateX(var(--progress,0)) rotate(180deg);
+    z-index:-1;
+}
+
+.mechanics-button:hover:before,
+.answer-key-button:hover:before{
+    --progress:100%;
+}
+
+.mechanics-button:hover:after,
+.answer-key-button:hover:after{
+    --progress:-100%;
+}
+
+
+
+
+
+/* Mobile */
+@media(max-width:768px){
+
+    .header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .subject{
+        flex: unset;
+        width: 100%;
+    }
+
+    .subject h1{
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .subject-info{
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .logos{
+        margin: 0;
+        justify-content: center;
+    }
+
+    .logos img{
+        width: 70px;
+        height: 70px;
+    }
+
+    .divider{
+        width: 80%;
+        height: 2px;
+        margin: 10px 0;
+    }
+
+    .students{
+        text-align: center;
+    }
+
+    .students p{
+        font-size: 0.95rem;
+    }
+
+    .bg-image{
+        position: relative;
+    }
+
+    .bg-image img{
+        width: 100%;
+        height: auto;
+    }
+
+    .buttons{
+    position:absolute;
+    top:133%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:90%;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.mechanics-button,
+.answer-key-button{
+    width:170px;
+    height:48px;
+    font-size:0.95rem;
+}
+
+}
+
+/* ===========================
+   LARGE DESKTOP
+=========================== */
+
+@media (min-width:1400px){
+
+    .mechanics-button,
+    .answer-key-button{
+
+        width:260px;
+        height:68px;
+        font-size:2rem;
+    }
+
+}
